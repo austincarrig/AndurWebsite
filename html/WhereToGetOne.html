@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="andurstylesheet.css">
+     <title>Andur</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class = "headerpicture">
+                <div class="headerpicturebox">
+                    <p id="test1">Andur</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">The app</a></li>
+        <li><a href="#">How to get one</a></li>
+        <li><a href="AboutUs.html">About us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class = "container-fluid">
+        <div class="row">
+            <div class ="col-lg-8 col-lg-offset-2">
+                <p>
+                    So you want to build an Andur device? <br>
+                    First what exactly is Andur? <br>
+                    Currently Andur is a temperature acquisition system that uses the thinking power of your iPhone to record and plot data from a thermocouple attached to an Arduino. <br>
+                    [Insert picture of everything together]
+</p>
+<p>
+Table of contents
+    <ul>
+        <li>
+            What is Andur
+        </li>
+        <li>
+            Parts list
+        </li>
+        <li>
+            Bread Board assembly
+        </li>
+        <li>
+            Arduino set up
+        </li>
+        <li>
+            IPhone set up
+        </li>
+        </ul>
+
+                </p>
+    <p>
+        Parts List
+        <ui>
+            <li>
+                Red Bear Labs BLE Breakout board …. 1
+            </li>
+            <li>
+                Arduino Uno…			1
+            </li>
+            <li>
+                Arduino cable   1
+            </li>
+            <li>
+                A computer with the Arduino SDK     1
+            </li>
+            <li>
+                MAX31850K breakout         1-4
+            </li>
+            <li>
+                K-type thermocouple wires 1-4
+            </li>
+            <li>  
+                Level shifter		1
+            </li>
+            <li>
+                Up to date IOS device… 1
+            </li>
+            <li>
+                Soldering iron   1
+            </li>
+            <li>
+                Breadboard or protoboard    1
+            </li>
+        </ui>
+    </p>
+            <p>
+To start with the breadboard first solder all the necessary pins on the breakout boards 
+[Insert picture of level shifter and MAX31850k with pins]
+Do we want a background on what everything does?
+
+Next we have to start wiring it up you have three options. The first option is only used if you have one thermocouple. The second option is called parasitic power, this is when the thermocouples use only one line for ground and a line for data. While this will allow for less wiring it will be more susceptible to voltage spikes and the reading will not be as accurate. The third option is called steady power, this is where each thermocouple has its own power supply to ensure all readings are correct and independent from each other.
+If you only have one Thermocouple click here
+If you have multiple Thermocouples and wish to use parasitic power click here
+If you have multiple Thermocouples and wish to use steady power click here
+
+
+One Thermocouple   [insert pictures throughout]
+First place the breakout board on the breadboard and attach the VIN pins and GND pins to the proper rails. Next attach a wire from the data pin to the A1 line on the level shifter. Run a wire from the Arduinos 3V3 line to the Level shifters LV pin, and run a wire from the positive rail to the HV line. Ground the level shifter, and place a resister between the LV line and the A1 line. Finally place a wire running from the B1 pin to pin 3 on the Arduino.
+
+
+Multiple Thermocouples using parasitic power [insert pictures throughout]
+First place the breakout board on the breadboard and attach the GND pins to the proper rail. Next attach a wire from the data pin to the next Thermocouples Data line. When there are no more Thermocouples left attach the wire to the A1 line on the level shifter. Run a wire from the Arduinos 3V3 line to the Level shifters LV pin, and run a wire from the positive rail to the HV line. Ground the level shifter, and place a resister between the LV line and the A1 line. Finally place a wire running from the B1 pin to pin 3 on the Arduino.
+
+Multiple Thermocouples using steady power [insert pictures throughout]
+First place the breakout board on the breadboard and attach the VIN pins and GND pins to the proper rails. Next attach a wire from the data pin to the next Thermocouples Data line. When there are no more Thermocouples left attach the wire to the A1 line on the level shifter.  Run a wire from the Arduinos 3V3 line to the Level shifters LV pin, and run a wire from the positive rail to the HV line. Ground the level shifter, and place a resister between the LV line and the A1 line. Finally place a wire running from the B1 pin to pin 3 on the Arduino. 
+Now it is time to get out your Arduino software to test if these are working.
+
+                </p>
+
+                        <blockquote class = "pull-left offset-2">
+                    <pre>
+NEED TO ADD THE LIBRARIES THAT WERE USED
+Load up your Arduino software and flash the Arduino with this code:
+// v 0.1.1
+
+#include &#60;OneWire.h>
+#include &#60;LiquidCrystal.h>
+#include &#60;DallasTemperature.h>
+#include &#60;elapsedMillis.h>
+
+#define Data_Wire 3  //this will depend on what pin we put it in.
+
+OneWire oneWire(Data_Wire);  // to enable communication between the device and the board
+
+DallasTemperature sensors(&amp;oneWire); // used to convert the incoming data over to temperatures
+DeviceAddress addr;  // address of the temperature chip (MAX 31850 boards)
+unsigned int interval = 1100;
+elapsedMillis timeElapsed;
+
+void setup(){
+  Serial.begin(9600);
+  Serial.println("Welcome to Andur");
+  sensors.begin();
+  Serial.print("Is this Parasitic mode? ");
+  Serial.println(sensors.isParasitePowerMode());
+  Serial.print("There are "); 
+  Serial.print(sensors.getDeviceCount()); 
+  Serial.println(" devices conected");
+  delay(2000);
+}
+
+void loop(){
+  getTempData();
+}
+
+void getTempData(){
+  sensors.requestTemperatures(); // calls on all the chips to get a reading
+  int Multiple_Temp_Data[sensors.getDeviceCount()];
+  if (timeElapsed > interval) 
+  {
+    for(uint8_t a=0; a &#60; sensors.getDeviceCount(); a++){  
+    //uint8 is a variable declared in dallastemperature.h it is the address of the device
+      sensors.getAddress(addr,a); // gets the address of the chip number a
+      Serial.print("Temperature of Thermocouple ");
+      Serial.print(a+1); 
+      Serial.print(" is ");
+      Serial.println(sensors.getTempFByIndex(a));
+    }
+
+  }
+  interval = 0;
+}
+
+                    </pre>
+                    <footer>Test code</footer>
+                </blockquote>
+   
+                        </div>
+    </div>
+    <div class="row">
+                <div class ="col-lg-8 col-lg-offset-2">
+
+            <p>
+        At the end of this code you should see that everything is working correctly and you are getting temperature data. <br>
+                [insert picture here] <br>
+With that working correctly you are 90% done so congratulate yourself! <br>
+Now all you have to do it take the four wires out of the ardiuno place the Red Bear Labs BLE breakout ontop of the ardiuno and place the four wires in the same spots only on the BLE board. Final step is to upload this code so that the board can communicate with the iPhone:
+    </p>
+                                            <blockquote class = "pull-left offset-2">
+                    <pre>
+/*
+ *    Andur
+ *
+ *    Reads in data from thermocouple amplifiers and sends them as
+ *    data packets to an iPhone app (Andur) for processing.
+ *
+ */
+
+#include &#60;SPI.h>
+#include &#60;boards.h>
+#include &#60;RBL_nRF8001.h>
+#include &#60;services.h> 
+#include &#60;stdlib.h>
+#include &#60;EEPROM.h>
+
+#include &#60;OneWire.h>
+#include &#60;DallasTemperature.h>
+
+#define Data_Wire 3  //this will depend on what pin we put it in.
+
+OneWire oneWire(Data_Wire);  // to enable communication between the device and the board
+
+DallasTemperature sensors(&amp;oneWire); // used to convert the incoming data over to temperatures
+DeviceAddress addr;  // address of the temperature chip (MAX 31850 boards)
+char *deviceNumber;
+
+void setup()
+{  
+  // Default pins set to 9 and 8 for REQN and RDYN
+  // Set your REQN and RDYN here before ble_begin() if you need
+  //ble_set_pins(3, 2);
+  
+  // Set your BLE Shield name here, max. length 10  
+  sensors.begin();
+  
+  char deviceName[10];
+  sprintf(deviceName,"And14 - %d",sensors.getDeviceCount());
+  ble_set_name(deviceName);
+
+  
+  // Init. and start BLE library.
+  ble_begin();
+  //ble_reset(4);  
+  // Enable serial debug
+  Serial.begin(9600);
+  Serial.println("start");
+  Serial.println(sensors.isParasitePowerMode());
+  Serial.print("There are "); 
+  Serial.print(sensors.getDeviceCount()); 
+  Serial.println(" devices connected");
+  Serial.print("Name: ");
+  Serial.println(deviceName);
+}
+
+unsigned char buf[16] = {0};
+unsigned char len = 0;
+
+void loop()
+{
+  getTempData();
+  ble_do_events();
+}
+
+void getTempData() {
+  sensors.requestTemperatures(); // calls on all the chips to get a reading
+  
+  char *separatingChar;
+  separatingChar = "@";
+  
+  uint8_t sizeOfString = sensors.getDeviceCount()*8;
+  char fullstring [sizeOfString];
+  memset(fullstring,0,sizeOfString);
+  
+  for(uint8_t a=0; a &#60; sensors.getDeviceCount(); a++){  
+  //uint8 is a variable declared in dallastemperature.h it is the address of the device
+    sensors.getAddress(addr,a); // gets the address of the chip number a
+    char string [7];
+    memset(string,0,7);
+    float temp = (float)sensors.getTempCByIndex(a);
+    dtostrf(temp,3,1,string);
+    
+    if (a == 0) {
+      strcpy(fullstring, string);
+    } else {
+      strcat(fullstring, separatingChar);
+      strcat(fullstring, string);
+    }
+  }
+  strcat(fullstring, separatingChar);
+  ble_write_bytes((unsigned char*)fullstring, strlen(fullstring));
+  Serial.println("-----");
+  Serial.println(fullstring);
+}
+
+
+                    </pre>
+                    <footer>Final code</footer>
+                </blockquote>
+    </div>
+</div>
+     <div class="row">
+                <div class ="col-lg-8 col-lg-offset-2">
+                    Take your IOS device and download the Andur app
+         </div>
+         </div>
+
+    </div>
+    <div id="footer2">
+    <s>Glassboro state</s> $$$$$ <span class="glyphicon glyphicon-chevron-right"></span> Rowan 2014 <a href="index.html">Home</a>
+    </div>
+    
+</body>
+</html>
