@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body data-spy="scroll" data-target=".scrollspy">
     <div class="container-fluid">
         <div class="row">
             <div class = "headerpicture">
@@ -34,9 +34,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">The app</a></li>
-        <li><a href="#">How to get one</a></li>
+        <li ><a href="Andur.html">Home</a></li>
+        <li><a href="theapp.html">The app</a></li>
+        <li class="active"><a href="#">How to get one</a></li>
         <li><a href="AboutUs.html">About us</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
@@ -44,38 +44,105 @@
   </div>
 </nav>
 
+
+    
+    
+        <div class="col-md-3 scrollspy">
+  <ul id="nav" class="nav hidden-xs hidden-sm" data-spy="affix">
+    <li>
+      <a href="#Andur"> What is Andur</a>
+    </li>
+    <li>
+      <a href="#Parts"> Parts list </a>
+    </li>
+      <li>
+          <a href="#Board">  Bread Board assembly </a>
+      <ul class="nav">
+        <li>
+          <a href="#one">
+           One ThermoCouple
+          </a>
+        </li>
+        <li>
+          <a href="#parasitic">
+            Parasitic Power
+          </a>
+        </li>
+        <li>
+            <a href="#steady">
+            Steady Power
+            </a>
+        </li>
+ 
+      </ul>
+    </li>   
+    <li>
+        <a href="#Arduino">  Arduino set up </a>
+              <ul class="nav">
+        <li>
+          <a href="#Test">
+           Test Code
+          </a>
+        </li>
+        <li>
+          <a href="#Final">
+            Final Code
+          </a>
+        </li> 
+      </ul>
+    </li>
+                          <li>
+                        <a href="#IPhone"> IPhone set up </a>
+                        
+                    </li>
+ 
+  </ul><!-- end of main navigation -->
+</div>
+
     <div class = "container-fluid">
         <div class="row">
-            <div class ="col-lg-8 col-lg-offset-2">
+            <div class ="hidden-lg hidden-md col-sm-8">
                 <p>
+                    Table of contents
+                <ul>
+                    <li>
+                       <a href="#Andur"> What is Andur</a>
+                    </li>
+                    <li>
+                        <a href="#Parts"> Parts list </a>
+                    </li>
+                    <li>
+                        <a href="#Board"> Bread Board assembly </a>
+                        
+                    </li>
+                    <li>
+                        <a href="#Arduino">  Arduino set up </a>
+                       
+                    </li>
+                    <li>
+                        <a href="#IPhone"> IPhone set up </a>
+                        
+                    </li>
+                </ul>
+
+                </p>
+            </div>
+        </div>
+    <div class="row">
+        <div class = "col-md-8 col-md-offset-2">
+                <p>
+                    <section id="Andur">
+                    <a name="Andur"></a> <h1>What is Andur?</h1> 
                     So you want to build an Andur device? <br>
                     First what exactly is Andur? <br>
                     Currently Andur is a temperature acquisition system that uses the thinking power of your iPhone to record and plot data from a thermocouple attached to an Arduino. <br>
                     [Insert picture of everything together]
+                    </section>
 </p>
-<p>
-Table of contents
-    <ul>
-        <li>
-            What is Andur
-        </li>
-        <li>
-            Parts list
-        </li>
-        <li>
-            Bread Board assembly
-        </li>
-        <li>
-            Arduino set up
-        </li>
-        <li>
-            IPhone set up
-        </li>
-        </ul>
 
-                </p>
     <p>
-        Parts List
+          <section id="Parts">
+         <a name="Parts"></a><h1>Parts List</h1> 
         <ui>
             <li>
                 Red Bear Labs BLE Breakout board …. 1
@@ -108,31 +175,44 @@ Table of contents
                 Breadboard or protoboard    1
             </li>
         </ui>
+        </section>
     </p>
             <p>
-To start with the breadboard first solder all the necessary pins on the breakout boards 
-[Insert picture of level shifter and MAX31850k with pins]
-Do we want a background on what everything does?
-
+                  <section id="Board">
+                <a name="Board"></a><h1>Breadboard set up</h1> 
+To start with the breadboard first solder all the necessary pins on the breakout boards <br>
+[Insert picture of level shifter and MAX31850k with pins] <br>
+Do we want a background on what everything does? <br>
+<br><br>
 Next we have to start wiring it up you have three options. The first option is only used if you have one thermocouple. The second option is called parasitic power, this is when the thermocouples use only one line for ground and a line for data. While this will allow for less wiring it will be more susceptible to voltage spikes and the reading will not be as accurate. The third option is called steady power, this is where each thermocouple has its own power supply to ensure all readings are correct and independent from each other.
-If you only have one Thermocouple click here
-If you have multiple Thermocouples and wish to use parasitic power click here
-If you have multiple Thermocouples and wish to use steady power click here
-
-
-One Thermocouple   [insert pictures throughout]
+    <br>
+<ui>
+<li>    If you only have one Thermocouple click <a href="#one">here </a> </li>
+<li>    If you have multiple Thermocouples and wish to use parasitic power click <a href="#parasitic"> here </a> </li>
+<li>    If you have multiple Thermocouples and wish to use steady power click <a href="#steady"> here </a> </li>
+</ui>
+  <br>
+                        <section id="one">
+<a name="one"></a> <h3>One Thermocouple </h3>   <br>  [insert pictures throughout]  <br>
 First place the breakout board on the breadboard and attach the VIN pins and GND pins to the proper rails. Next attach a wire from the data pin to the A1 line on the level shifter. Run a wire from the Arduinos 3V3 line to the Level shifters LV pin, and run a wire from the positive rail to the HV line. Ground the level shifter, and place a resister between the LV line and the A1 line. Finally place a wire running from the B1 pin to pin 3 on the Arduino.
+                      </section>
+  <br>
 
-
-Multiple Thermocouples using parasitic power [insert pictures throughout]
+                        <section id="parasitic">
+<a name="parasitic"></a> <h3>Multiple Thermocouples using parasitic power </h3> <br> [insert pictures throughout]  <br>
 First place the breakout board on the breadboard and attach the GND pins to the proper rail. Next attach a wire from the data pin to the next Thermocouples Data line. When there are no more Thermocouples left attach the wire to the A1 line on the level shifter. Run a wire from the Arduinos 3V3 line to the Level shifters LV pin, and run a wire from the positive rail to the HV line. Ground the level shifter, and place a resister between the LV line and the A1 line. Finally place a wire running from the B1 pin to pin 3 on the Arduino.
-
-Multiple Thermocouples using steady power [insert pictures throughout]
+                      </section>
+  <br>
+                        <section id="steady">
+<a name="steady"></a><h3>Multiple Thermocouples using steady power </h3>  <br>[insert pictures throughout]  <br>
 First place the breakout board on the breadboard and attach the VIN pins and GND pins to the proper rails. Next attach a wire from the data pin to the next Thermocouples Data line. When there are no more Thermocouples left attach the wire to the A1 line on the level shifter.  Run a wire from the Arduinos 3V3 line to the Level shifters LV pin, and run a wire from the positive rail to the HV line. Ground the level shifter, and place a resister between the LV line and the A1 line. Finally place a wire running from the B1 pin to pin 3 on the Arduino. 
 Now it is time to get out your Arduino software to test if these are working.
+                      </section><br>
+                        <section id="Arduino">
+    <a name="Arduino"></a> <h1>Arduino setup</h1> 
 
                 </p>
-
+<section id="Test"> <a name="Test"></a>
                         <blockquote class = "pull-left offset-2">
                     <pre>
 NEED TO ADD THE LIBRARIES THAT WERE USED
@@ -190,13 +270,13 @@ void getTempData(){
                     </pre>
                     <footer>Test code</footer>
                 </blockquote>
-   
+    </section>
                         </div>
     </div>
     <div class="row">
-                <div class ="col-lg-8 col-lg-offset-2">
-
-            <p>
+                <div class ="col-md-8 col-md-offset-2">
+<section id="Final"><a name="Final"></a>
+    <p>
         At the end of this code you should see that everything is working correctly and you are getting temperature data. <br>
                 [insert picture here] <br>
 With that working correctly you are 90% done so congratulate yourself! <br>
@@ -302,11 +382,15 @@ void getTempData() {
                     </pre>
                     <footer>Final code</footer>
                 </blockquote>
+                    </section>
     </div>
 </div>
      <div class="row">
-                <div class ="col-lg-8 col-lg-offset-2">
+                <div class ="col-md-8 col-md-offset-2">
+                    <section id="IPhone">
+                       <a name="IPhone"></a> <h1>IPhone setup</h1> 
                     Take your IOS device and download the Andur app
+                        </section>
          </div>
          </div>
 
