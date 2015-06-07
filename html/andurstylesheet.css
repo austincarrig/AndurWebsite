@@ -42,7 +42,7 @@ body {
 }
  
 .nav .nav {
-  display: none;
+  display: block;
 }
  
 .nav .active .nav {
@@ -51,7 +51,9 @@ body {
  
 .nav .nav a {
   font-weight: normal;
-  font-size: .85em;
+  font-size: .95em;
+    padding-left: 30px;
+    color: orange
 }
  
 .nav .nav span {
@@ -71,5 +73,41 @@ body {
 .nav .nav .active:focus span {
   display: none;
 }
+
+
+
+
+.nav .nav .nav{
+    display: none;
+}
+.nav .nav .active .nav {
+  display: block;
+}
+
+.nav .nav .nav a {
+  font-weight: normal;
+  font-size: .85em;
+    color:black;
+        padding-left: 40px;
+}
+ 
+.nav .nav .nav span {
+  margin: 0 5px 0 2px;
+}
+ 
+.nav .nav .nav .active a,
+.nav .nav .nav .active:hover a,
+.nav .nav .nav .active:focus a {
+  font-weight: bold;
+  padding-left: 50px;
+  border-left: 5px solid blue;
+}
+ 
+.nav .nav .nav .active span,
+.nav .nav .nav .active:hover span,
+.nav .nav. nav .active:focus span {
+  display: none;
+}
+
 
 </style>

@@ -23,8 +23,10 @@
         </div>
     </div>
     
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+
+<nav class="navbar navbar-inverse hidden-lg hidden-md hidden-sm">
+  
+    <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -32,6 +34,7 @@
         <span class="icon-bar"></span>                        
       </button>
     </div>
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li ><a href="Andur.html">Home</a></li>
@@ -41,7 +44,7 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
-  </div>
+  </div> 
 </nav>
 
 
@@ -49,57 +52,47 @@
     
         <div class="col-md-3 scrollspy">
   <ul id="nav" class="nav hidden-xs hidden-sm" data-spy="affix">
-    <li>
-      <a href="#Andur"> What is Andur</a>
-    </li>
-    <li>
-      <a href="#Parts"> Parts list </a>
-    </li>
-      <li>
-          <a href="#Board">  Bread Board assembly </a>
+        <li ><a href="Andur.html">Home</a></li>
+        <li><a href="theapp.html">The app</a></li>
+      <li class = "active"><a href="#top">How to get one</a></li>
       <ul class="nav">
-        <li>
-          <a href="#one">
-           One ThermoCouple
-          </a>
-        </li>
-        <li>
-          <a href="#parasitic">
-            Parasitic Power
-          </a>
-        </li>
-        <li>
-            <a href="#steady">
-            Steady Power
-            </a>
-        </li>
- 
+
+          
+    <li> <a href="#Andur"> What is Andur</a> </li>
+    <li> <a href="#Parts"> Parts list </a>   </li>
+    <li> <a href="#Board">  Bread Board assembly </a>
+      <ul class="nav">
+        <li> <a href="#one"> One ThermoCouple </a> </li>
+        <li> <a href="#parasitic"> Parasitic Power </a> </li>
+        <li> <a href="#steady">  Steady Power </a> </li>
       </ul>
     </li>   
     <li>
         <a href="#Arduino">  Arduino set up </a>
               <ul class="nav">
         <li>
-          <a href="#Test">
-           Test Code
-          </a>
+          <a href="#Test"> Test Code </a>
         </li>
         <li>
-          <a href="#Final">
-            Final Code
-          </a>
+          <a href="#Final">Final Code</a>
         </li> 
       </ul>
     </li>
-                          <li>
-                        <a href="#IPhone"> IPhone set up </a>
-                        
-                    </li>
- 
-  </ul><!-- end of main navigation -->
-</div>
+      <li>
+          <a href="#IPhone"> IPhone set up </a>
+                  
+      </li>
+          
+      </ul> <!-- end of page nav -->
+      
+        <li><a href="AboutUs.html">About us</a></li>
+        <li><a href="#">Contact</a></li>
 
+  </ul><!-- end of all nav -->
+</div>
+        <section id="top">
     <div class = "container-fluid">
+
         <div class="row">
             <div class ="hidden-lg hidden-md col-sm-8">
                 <p>
@@ -128,6 +121,7 @@
                 </p>
             </div>
         </div>
+
     <div class="row">
         <div class = "col-md-8 col-md-offset-2">
                 <p>
@@ -194,7 +188,8 @@ Next we have to start wiring it up you have three options. The first option is o
   <br>
                         <section id="one">
 <a name="one"></a> <h3>One Thermocouple </h3>   <br>  [insert pictures throughout]  <br>
-First place the breakout board on the breadboard and attach the VIN pins and GND pins to the proper rails. Next attach a wire from the data pin to the A1 line on the level shifter. Run a wire from the Arduinos 3V3 line to the Level shifters LV pin, and run a wire from the positive rail to the HV line. Ground the level shifter, and place a resister between the LV line and the A1 line. Finally place a wire running from the B1 pin to pin 3 on the Arduino.
+First place the breakout board on the breadboard and attach the VIN pins and GND pins to the proper rails. Next attach a wire from the data pin to
+the A1 line on the level shifter. Run a wire from the Arduinos 3V3 line to the Level shifters LV pin, and run a wire from the positive rail to the HV line. Ground the level shifter, and place a resister between the LV line and the A1 line. Finally place a wire running from the B1 pin to pin 3 on the Arduino.
                       </section>
   <br>
 
@@ -208,9 +203,9 @@ First place the breakout board on the breadboard and attach the GND pins to the 
 First place the breakout board on the breadboard and attach the VIN pins and GND pins to the proper rails. Next attach a wire from the data pin to the next Thermocouples Data line. When there are no more Thermocouples left attach the wire to the A1 line on the level shifter.  Run a wire from the Arduinos 3V3 line to the Level shifters LV pin, and run a wire from the positive rail to the HV line. Ground the level shifter, and place a resister between the LV line and the A1 line. Finally place a wire running from the B1 pin to pin 3 on the Arduino. 
 Now it is time to get out your Arduino software to test if these are working.
                       </section><br>
-                        <section id="Arduino">
+        </section>
+                        <section id="Arduino"> 
     <a name="Arduino"></a> <h1>Arduino setup</h1> 
-
                 </p>
 <section id="Test"> <a name="Test"></a>
                         <blockquote class = "pull-left offset-2">
@@ -385,6 +380,7 @@ void getTempData() {
                     </section>
     </div>
 </div>
+    </section>
      <div class="row">
                 <div class ="col-md-8 col-md-offset-2">
                     <section id="IPhone">
@@ -393,11 +389,12 @@ void getTempData() {
                         </section>
          </div>
          </div>
-
-    </div>
+<div class="row">
     <div id="footer2">
     <s>Glassboro state</s> $$$$$ <span class="glyphicon glyphicon-chevron-right"></span> Rowan 2014 <a href="index.html">Home</a>
     </div>
-    
+    </div>
+</div>
+</section>
 </body>
 </html>
