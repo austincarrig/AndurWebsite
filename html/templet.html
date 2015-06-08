@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<link rel="stylesheet" href="andurstylesheet.css">
+
      <title>Andur</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,10 +9,23 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Home.css">
     </head>
-    <body>
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
+    <body data-spy="scroll" data-target=".scrollspy">
+<div class="container-fluid">
+        <div class="row">
+            <div class = "headerpicture">
+                <div class="headerpicturebox">
+                    <p id="test1">Andur</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<nav class="navbar navbar-inverse hidden-lg hidden-md hidden-sm">
+  
+    <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -20,16 +33,38 @@
         <span class="icon-bar"></span>                        
       </button>
     </div>
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">The app</a></li>
-        <li><a href="#">How to get one</a></li>
-        <li><a href="#">About us</a></li>
+        <li ><a href="Andur.html">Home</a></li>
+        <li><a href="theapp.html">The app</a></li>
+        <li class="active"><a href="#">How to get one</a></li>
+        <li><a href="AboutUs.html">About us</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
-  </div>
+  </div> 
 </nav>
+        
+            
+        <div class="col-md-3 scrollspy">
+  <ul id="nav" class="nav hidden-xs hidden-sm" data-spy="affix">
+        <li class="active"><a href="#top">Home</a></li>
+            <ul class="nav">
+
+          
+    <li> <a href="#Andur"> What is Andur</a> </li>
+    <li> <a href="#Parts"> Parts list </a>   </li>
+    <li> <a href="#Board">  Bread Board assembly </a>
+    </li>  
+          
+      </ul> <!-- end of page nav -->
+        <li><a href="theapp.html">The app</a></li>
+      <li><a href="WhereToGetOne.html">How to get one</a></li>
+      <li><a href="AboutUs.html">About us</a></li>
+        <li><a href="#">Contact</a></li>
+
+  </ul><!-- end of all nav -->
+</div>
 </body>
 </html>

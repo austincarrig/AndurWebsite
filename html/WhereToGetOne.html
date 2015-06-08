@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="andurstylesheet.css">
+
      <title>Andur</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +10,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="WhereToGetOne.css">
 </head>
 
-<body data-spy="scroll" data-target=".scrollspy">
+<body data-spy="scroll" data-target=".scrollspy" >
+
     <div class="container-fluid">
         <div class="row">
             <div class = "headerpicture">
@@ -54,9 +56,8 @@
   <ul id="nav" class="nav hidden-xs hidden-sm" data-spy="affix">
         <li ><a href="Andur.html">Home</a></li>
         <li><a href="theapp.html">The app</a></li>
-      <li class = "active"><a href="#top">How to get one</a></li>
+      <li><a href="#page">How to get one</a></li>
       <ul class="nav">
-
           
     <li> <a href="#Andur"> What is Andur</a> </li>
     <li> <a href="#Parts"> Parts list </a>   </li>
@@ -79,10 +80,8 @@
       </ul>
     </li>
       <li>
-          <a href="#IPhone"> IPhone set up </a>
-                  
+          <a href="#IPhone"> IPhone set up </a>    
       </li>
-          
       </ul> <!-- end of page nav -->
       
         <li><a href="AboutUs.html">About us</a></li>
@@ -90,8 +89,9 @@
 
   </ul><!-- end of all nav -->
 </div>
-        <section id="top">
-    <div class = "container-fluid">
+
+                       <section id="page">
+    <div class = "container-fluid" >
 
         <div class="row">
             <div class ="hidden-lg hidden-md col-sm-8">
@@ -121,10 +121,10 @@
                 </p>
             </div>
         </div>
-
     <div class="row">
         <div class = "col-md-8 col-md-offset-2">
                 <p>
+
                     <section id="Andur">
                     <a name="Andur"></a> <h1>What is Andur?</h1> 
                     So you want to build an Andur device? <br>
@@ -132,6 +132,7 @@
                     Currently Andur is a temperature acquisition system that uses the thinking power of your iPhone to record and plot data from a thermocouple attached to an Arduino. <br>
                     <img src="IMG_4286.jpg" class= "img-responsive" alt="AndurCover" width="460" height="345" > 
                     </section>
+
 </p>
 
     <p>
@@ -172,6 +173,7 @@
         </section>
     </p>
             <p>
+
                   <section id="Board">
                 <a name="Board"></a><h1>Breadboard set up</h1> 
 To start with the breadboard first solder all the necessary pins on the breakout boards <br>
@@ -204,9 +206,10 @@ First place the breakout board on the breadboard and attach the VIN pins and GND
 Now it is time to get out your Arduino software to test if these are working.
                       </section><br>
         </section>
-                        <section id="Arduino"> 
-    <a name="Arduino"></a> <h1>Arduino setup</h1> 
+
                 </p>
+    <section id="Arduino"> 
+    <a name="Arduino"></a> <h1>Arduino setup</h1> 
 <section id="Test"> <a name="Test"></a>
                         <blockquote class = "pull-left offset-2">
                     <pre>
@@ -265,6 +268,7 @@ void getTempData(){
                     </pre>
                     <footer>Test code</footer>
                 </blockquote>
+    </section>
     </section>
                         </div>
     </div>
@@ -378,9 +382,11 @@ void getTempData() {
                     <footer>Final code</footer>
                 </blockquote>
                     </section>
+ 
+        
     </div>
 </div>
-    </section>
+
      <div class="row">
                 <div class ="col-md-8 col-md-offset-2">
                     <section id="IPhone">
@@ -394,7 +400,9 @@ void getTempData() {
     <s>Glassboro state</s> $$$$$ <span class="glyphicon glyphicon-chevron-right"></span> Rowan 2014 <a href="index.html">Home</a>
     </div>
     </div>
-</div>
+
+    </div>
 </section>
+
 </body>
 </html>

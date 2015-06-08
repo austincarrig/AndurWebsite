@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<link rel="stylesheet" href="andurstylesheet.css">
+
      <title>Andur</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,45 +9,81 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Home.css">
 </head>
     
     
-<body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>                        
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="Andur.html">Home</a></li>
-                    <li><a href="theapp.html">The app</a></li>
-                    <li><a href="WhereToGetOne.html">How to get one</a></li>
-                    <li class="active"><a href="AboutUs.html">About us</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+<body data-spy="scroll" data-target=".scrollspy">
+   <div class="container-fluid">
+        <div class="row">
+            <div class = "headerpicture">
+                <div class="headerpicturebox">
+                    <p id="test1">Andur</p>
+                </div>
             </div>
         </div>
-    </nav>
+    </div>
+    
+
+<nav class="navbar navbar-inverse hidden-lg hidden-md hidden-sm">
+  
+    <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li ><a href="Andur.html">Home</a></li>
+        <li><a href="theapp.html">The app</a></li>
+        <li><a href="WhereToGetOne.html">How to get one</a></li>
+        <li class="active"><a href="#">About us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div> 
+</nav>
+        
+        <div class="col-md-3 scrollspy">
+  <ul id="nav" class="nav hidden-xs hidden-sm" data-spy="affix">
+        <li><a href="Andur.html">Home</a></li>
+            
+        <li><a href="theapp.html">The app</a></li>
+      <li><a href="WhereToGetOne.html">How to get one</a></li>
+      <li  class="active"><a href="#top">About us</a></li>
+      <ul class="nav">
+
+          
+    <li> <a href="#Andur"> What is Andur</a> </li>
+    <li> <a href="#Parts"> Parts list </a>   </li>
+    <li> <a href="#Board">  Bread Board assembly </a>
+    </li>  
+          
+      </ul> <!-- end of page nav -->
+        <li><a href="#">Contact</a></li>
+
+  </ul><!-- end of all nav -->
+</div>
     <div class = "container-fluid">
-        <h1>About us</h1>
+        
         <div class = "row">
-            <div class = "col-sm-12">
+            <div class = "col-md-offset-2">
+                <h1>About us</h1>
                 There are currently two on the project
             </div>
         </div>
         <div class = "row">
-            <div class = "col-sm-6">
+            <div class = "col-md-offset-2">
                 <img src = "ripped-black-male-258x3001.jpg" class = "img-responsive" alt = "Austin pic">
                 <h3> Austin Carrig</h3>
                 <P>
                     Hi my name is Austin and I'm JACKED OUT OF MY MIND!!!</P>
             </div>
-            <div class = "col-sm-6">
+            <div class = "col-md-offset-2">
                 <img src = "justinpicture.jpg" class = "img-responsive" alt = "justin pic">
                 <h3> Justin lavan</h3>
                 <P>
@@ -56,12 +92,12 @@
             </div>
         </div>
         <div class = "row">
-            <div class = "col-sm-12">
+            <div class = "col-md-offset-2">
                 <h1> Mission statement </h1>
             </div>
         </div>
         <div class = "row">
-            <div class = "col-sm-12">
+            <div class = "col-md-offset-2">
                 <blockquote class = "pull-left">
                     <pre>
 Prepare for trouble!
@@ -82,7 +118,7 @@ That's right!
             </div>
         </div>
         <div class = "row">
-            <div class = "col-sm-12">
+            <div class = "col-md-offset-2">
             <h1> Special Thanks </h1>
                 special thanks to da homie dr b, he da true mvp
             </div>
